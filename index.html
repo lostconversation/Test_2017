@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>A D3 chart</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>asdfasdfasdfasdfasrgtnsfthstgh
+
+	<svg width="330" >
+		<rect x="0" width="15" fill="#d1c9b8"></rect>
+		<rect x="25" width="15" fill="#d1c9b8"></rect>
+		<rect x="50" width="15" fill="#d1c9b8"></rect>
+		<rect x="75" width="15" fill="#d1c9b8"></rect>
+	</svg>
+
+	<script>
+		var h=100;
+		var ratio=2;
+		var ratData = [ 400, 900, 300, 600 ];
+		d3.select ("svg")
+		.attr("height", h)
+		d3.selectAll( "rect" )
+		.data( ratData )
+		.attr( "height", function(d){
+			return d/10 * ratio;
+		})
+		.attr( "y", function(d){
+			return h - d/10 * ratio;
+		});
+	</script>
+
+</body>
+</html>
